@@ -1,0 +1,25 @@
+
+public class SalesArray {
+    public static void main(String[] args) {
+        int[] sales = {
+            1200, 1500, 900, 2000, 1800, 2500,
+            1100, 3000, 1700, 2200, 800, 2800
+        };
+
+        int max = sales[0];
+        int min = sales[0];
+
+        for (int i = 1; i < sales.length; i++) {
+            if (sales[i] > max) {
+                max = sales[i];
+            }
+
+            if (sales[i] < min) {
+                min = sales[i];
+            }
+        }
+
+        System.out.println("Highest sales: " + max);
+        System.out.println("Lowest sales: " + min);
+    }
+}

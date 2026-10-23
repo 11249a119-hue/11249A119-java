@@ -1,0 +1,27 @@
+
+import java.applet.Applet;
+import java.awt.Graphics;
+import java.awt.Color;
+
+public class FaceApplet extends Applet {
+    public void paint(Graphics g) {
+        // Face
+        g.setColor(Color.YELLOW);
+        g.fillOval(100, 50, 180, 200);
+
+        // Eyes
+        g.setColor(Color.BLACK);
+        g.fillOval(145, 110, 20, 20);
+        g.fillOval(215, 110, 20, 20);
+
+        // Nose
+        g.drawLine(190, 130, 175, 165);
+        g.drawLine(175, 165, 195, 165);
+
+        // Mouth
+        g.drawArc(150, 165, 80, 45, 180, 180);
+
+        // Title
+        g.drawString("Simple Human Face", 115, 280);
+    }
+}

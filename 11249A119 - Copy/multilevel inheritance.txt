@@ -1,0 +1,73 @@
+class Student {
+    int rollNo;
+    String name;
+
+    Student(int rollNo, String name) {
+        this.rollNo = rollNo;
+        this.name = name;
+    }
+
+    void displayStudent() {
+        System.out.println("Roll Number: " + rollNo);
+        System.out.println("Name: " + name);
+    }
+}
+
+class Marks extends Student {
+    int[] marks;
+
+    Marks(int rollNo, String name, int[] marks) {
+        super(rollNo, name);
+        this.marks = marks;
+    }
+
+    void displayMarks() {
+        System.out.println("Subject Marks:");
+        for (int mark : marks) {
+            System.out.println(mark);
+        }
+    }
+}
+
+class Result extends Marks {
+    Result(int rollNo, String name, int[] marks) {
+        super(rollNo, name, marks);
+    }
+
+    void calculateResult() {
+        int total = 0;
+
+        for (int mark : marks) {
+            total += mark;
+        }
+
+        double average = total / 5.0;
+        String grade;
+
+        if (average >= 90)
+            grade = "A";
+        else if (average >= 75)
+            grade = "B";
+        else if (average >= 60)
+            grade = "C";
+        else if (average >= 40)
+            grade = "D";
+        else
+            grade = "Fail";
+
+        displayStudent();
+        displayMarks();
+        System.out.println("Total Marks: " + total);
+        System.out.println("Average: " + average);
+        System.out.println("Grade: " + grade);
+    }
+}
+
+public class StudentResult {
+    public static void main(String[] args) {
+        int[] marks = {90, 85, 80, 95, 90};
+
+        Result r = new Result(101, "Ravi", marks);
+        r.calculateResult();
+    }
+}

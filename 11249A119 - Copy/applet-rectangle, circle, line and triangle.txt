@@ -1,0 +1,26 @@
+
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class ShapesApplet extends Applet {
+    public void paint(Graphics g) {
+        // Rectangle
+        g.drawRect(30, 50, 100, 60);
+
+        // Circle
+        g.drawOval(170, 50, 70, 70);
+
+        // Line
+        g.drawLine(280, 50, 380, 110);
+
+        // Triangle
+        g.drawLine(100, 180, 50, 260);
+        g.drawLine(100, 180, 150, 260);
+        g.drawLine(50, 260, 150, 260);
+
+        g.drawString("Rectangle", 40, 130);
+        g.drawString("Circle", 180, 135);
+        g.drawString("Line", 310, 130);
+        g.drawString("Triangle", 75, 280);
+    }
+}

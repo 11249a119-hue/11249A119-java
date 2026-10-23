@@ -1,0 +1,16 @@
+
+public class TrainCodes {
+    public static void main(String[] args) {
+        String[] trains = {
+            "TN101", "TN202", "TN303"
+        };
+
+        try {
+            System.out.println("Train code: " + trains[5]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Invalid array index!");
+        }
+
+        System.out.println("Program continues normally.");
+    }
+}

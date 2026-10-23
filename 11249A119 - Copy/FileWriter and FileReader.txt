@@ -1,0 +1,32 @@
+
+import java.io.FileWriter;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class TextEditor {
+    public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("notes.txt");
+
+            writer.write("Welcome to Java Programming.\n");
+            writer.write("This is a file handling program.");
+            writer.close();
+
+            System.out.println("Text written successfully.");
+
+            FileReader reader = new FileReader("notes.txt");
+
+            int ch;
+            System.out.println("\nFile Contents:");
+
+            while ((ch = reader.read()) != -1) {
+                System.out.print((char) ch);
+            }
+
+            reader.close();
+
+        } catch (IOException e) {
+            System.out.println("File error: " + e.getMessage());
+        }
+    }
+}
